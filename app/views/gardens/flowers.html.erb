@@ -1,0 +1,8 @@
+<%= "Here's your garden! #{@garden_form.to_json}" %>
+
+<%= form_for(@garden_form, as: :garden_form, url: validate_step_garden_path) do |form| %>
+  <%= hidden_field_tag :current_step, 'flowers' %>
+
+  <%= form.text_field :flowers %>
+  <%= form.submit "Save" %>
+<% end %>
